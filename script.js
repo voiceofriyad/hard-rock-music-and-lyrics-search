@@ -30,8 +30,8 @@ function searchMusic(){
                                                                         <p class="author lead">Album by <span>${artistName}</span></p>
                                                                     </div>
                                                                     <div class="col-md-6 text-md-right text-center">
-                                                                        <a href="#lyrics-or-details"><button onClick="getDetails(${id})" class="btn btn-success">Get Details</button></a>
-                                                                        <a href="#lyrics-or-details"><button onClick="getLyrics(${id})" class="btn btn-success">Get Lyrics</button></a>
+                                                                        <a href="#lyrics-or-details"><button onClick="getDetails(${id})" class="btn btn-danger">Get Details</button></a>
+                                                                        <a href="#lyrics-or-details"><button onClick="getLyrics(${id})" class="btn btn-danger">Get Lyrics</button></a>
                                                                     </div>
                                                                 </div>`
             // Not to show more than 10 songs
@@ -103,7 +103,7 @@ function getLyrics(id){
             .then(data => {
                 let lyrics = data.lyrics;
                 if(lyrics == undefined){
-                    lyrics = `Song Lyrics Not Found. Try for another song`;
+                    lyrics = `Song Lyrics Not Found. Please try for another song.`;
                 }
                 document.getElementById('lyrics-or-details').innerHTML = `<div class="single-lyrics text-center">
                                                                             <button class="btn go-back">&lsaquo;</button>
